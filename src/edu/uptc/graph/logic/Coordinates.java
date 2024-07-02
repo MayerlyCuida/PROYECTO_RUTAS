@@ -2,7 +2,7 @@ package edu.uptc.graph.logic;
 
 import java.util.ArrayList;
 
-// Clase Cordenadas Cordenadas
+// Clase Coordenadas
 public class Coordinates extends ArrayList<int[]> {
 	private int xMaxima;
 	private int yMaxima;

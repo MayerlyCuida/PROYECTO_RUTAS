@@ -9,7 +9,11 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
+import edu.uptc.graph.logic.Node;
+
 public class view extends JFrame{
+    Grafo grafo = new Grafo();
+
 	 private JPanel jPanel1;
 	 private JPanel jPanel2;
 	    
@@ -42,6 +46,25 @@ public class view extends JFrame{
     }
     public void dibujarGrafo(){
         jPanel1.paint(jPanel1.getGraphics());
+        dibujarArista();
+        dibujarNodos();
+    }
+    public void dibujarNodos(){
+        ArrayList<Node> listaNodo = grafo.getListaNodos();
+        for(Nodo nodo:listaNodo){            
+            nodo.getCirculo().dibujarCirculo(jPanel1.getGraphics());
+        }
+    }
+    public void dibujarArista(){
+        ArrayList<Nodo> listaNodo = grafo.getListaNodos();
+        for(Nodo nodo:listaNodo){            
+            ArrayList<Enlace> listaEnlace = nodo.getListaNodoAdyacente();
+            if(listaEnlace != null){
+                for(Enlace enlace:listaEnlace){
+                    enlace.getArista().getLineaQuebrada().dibujarLineaQuebrada(jPanel1.getGraphics());
+                }
+            }            
+        }
     }
 
 	    public static void main(String[] args) {

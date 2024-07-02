@@ -1,10 +1,15 @@
 package edu.uptc.graph.logic;
-//Arista
 
+
+//Clase Arista
 public class Edge {
 	private  int  	idEdge;
 	private  String nameEdge;
 	private int distance;
+	
+	public Edge() {
+		
+	}
 	
 	public Edge(int idEdge, String nameEdge, int distance) {
 		super();
