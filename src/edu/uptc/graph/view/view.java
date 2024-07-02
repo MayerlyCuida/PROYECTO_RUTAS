@@ -9,10 +9,12 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
+import edu.uptc.graph.logic.Graph;
+import edu.uptc.graph.logic.Link;
 import edu.uptc.graph.logic.Node;
 
 public class view extends JFrame{
-    Grafo grafo = new Grafo();
+    Graph grafo = new Graph();
 
 	 private JPanel jPanel1;
 	 private JPanel jPanel2;
@@ -46,27 +48,23 @@ public class view extends JFrame{
     }
     public void dibujarGrafo(){
         jPanel1.paint(jPanel1.getGraphics());
-        dibujarArista();
-        dibujarNodos();
     }
     public void dibujarNodos(){
-        ArrayList<Node> listaNodo = grafo.getListaNodos();
-        for(Nodo nodo:listaNodo){            
+        ArrayList<Node> listaNodo = grafo.getNodeList();
+        for(Node nodo:listaNodo){            
             nodo.getCirculo().dibujarCirculo(jPanel1.getGraphics());
         }
     }
     public void dibujarArista(){
-        ArrayList<Nodo> listaNodo = grafo.getListaNodos();
-        for(Nodo nodo:listaNodo){            
-            ArrayList<Enlace> listaEnlace = nodo.getListaNodoAdyacente();
+        ArrayList<Node> listaNodo = grafo.getNodeList();
+        for(Node nodo:listaNodo){            
+            ArrayList<Link> listaEnlace = nodo.getListaNodoAdyacente();
             if(listaEnlace != null){
-                for(Enlace enlace:listaEnlace){
-                    enlace.getArista().getLineaQuebrada().dibujarLineaQuebrada(jPanel1.getGraphics());
+                for(Link enlace:listaEnlace){
                 }
             }            
         }
     }
-
 	    public static void main(String[] args) {
 	        // Create and display the JFrame
 	        SwingUtilities.invokeLater(() -> {

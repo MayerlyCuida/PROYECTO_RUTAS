@@ -31,4 +31,18 @@ public class Graph {
         }
         return temp;
     }
+    public void crearEnlacesDirigido(Node padre,Node adyacente,Edge arista){
+        if(padre != null && adyacente != null){
+            padre.addNodoAdyacente(arista,adyacente);
+        }
+    }
+
+	public ArrayList<Node> getNodeList() {
+		return nodeList;
+	}
+
+	public void setNodeList(ArrayList<Node> nodeList) {
+		this.nodeList = nodeList;
+	}
+    
 }
