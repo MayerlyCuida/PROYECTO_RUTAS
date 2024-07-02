@@ -7,12 +7,11 @@ public class knot {
 	
 	 private Object fact;
 	 private boolean visited = false;    
-	 private int  izquierda;
+	 private int  left;
 
 	   public knot() {
-		   this.fact = new Object();
-	        
-	        izquierda = 0;
+		   this.fact = new Object(); 
+		   left = 0;
 		}
 	       
 	   
