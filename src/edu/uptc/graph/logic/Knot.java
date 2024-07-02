@@ -3,13 +3,13 @@ package edu.uptc.graph.logic;
 
 
 //Clase Nodo 
-public class knot {
+public class Knot {
 	
 	 private Object fact;
 	 private boolean visited = false;    
 	 private int  left;
 
-	   public knot() {
+	   public Knot() {
 		   this.fact = new Object(); 
 		   left = 0;
 		}
@@ -17,7 +17,7 @@ public class knot {
 	   
 
 	 
-	    public knot(Object dato){
+	    public Knot(Object dato){
 	        this.fact = dato;
 	    }
 
