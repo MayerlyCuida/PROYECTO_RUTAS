@@ -1,4 +1,4 @@
-package edu.uptc.logic;
+package edu.uptc.graph.logic;
 //Arista
 
 public class Edge {
