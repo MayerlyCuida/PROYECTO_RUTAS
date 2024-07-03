@@ -28,7 +28,7 @@ public class view extends JFrame{
         jPanel1 = new JPanel();
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Grafo Mapa"));
         // Example: Adding a JLabel to jPanel1
-        JLabel label = new JLabel("Hello, Swing!");
+        JLabel label = new JLabel("PROYECTO GRAFOS MAYERLY - LEIDY");
         jPanel1.add(label);
         
 

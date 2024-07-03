@@ -1,6 +1,6 @@
 package edu.uptc.graph.logic;
 
-//
+//Enlace
 public class Link {
 	 private Edge edge;
 	    private Node node;
@@ -9,9 +9,9 @@ public class Link {
 	    public Link(){
 	    	edge=new Edge();
 	    	node= new Node();
+	    	
 	    }
 	    public Link(Edge edge,Node node){
-	   
 	        this.edge = edge;
 	        this.node = node;
 	    }

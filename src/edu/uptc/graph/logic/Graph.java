@@ -1,7 +1,7 @@
 package edu.uptc.graph.logic;
 
 import java.util.ArrayList;
-
+//Grafo
 public class Graph {
 
     private ArrayList<Node> nodeList;

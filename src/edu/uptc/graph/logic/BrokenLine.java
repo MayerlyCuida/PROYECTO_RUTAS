@@ -1,10 +1,10 @@
-package objetos;
+package edu.uptc.graph.logic;
 import java.awt.*;
 
-public class LineaQuebrada
+public class BrokenLine
 {
     // Instanciando variables
-    private Coordenadas coordenadas;
+    private Coordinates coordenadas;
     private Color color;
     private float grosorLinea;
     private String etiqueta;
@@ -13,7 +13,7 @@ public class LineaQuebrada
     /**
      * Constructor para objetos de la clase Lineaquebrada
      */
-    public LineaQuebrada(Coordenadas coordenadas){
+    public BrokenLine(Coordinates coordenadas){
         // inicializando variables de instancia
         this.coordenadas = coordenadas;
         grosorLinea = 1f;
@@ -98,11 +98,11 @@ public class LineaQuebrada
         this.longitud = longitud;
     }
 
-    public Coordenadas getCoordenadas() {
+    public Coordinates getCoordenadas() {
         return coordenadas;
     }
 
-    public void setCoordenadas(Coordenadas coordenadas) {
+    public void setCoordenadas(Coordinates coordenadas) {
         this.coordenadas = coordenadas;
     }
 
