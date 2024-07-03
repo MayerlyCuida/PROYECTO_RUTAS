@@ -50,13 +50,13 @@ public class view extends JFrame{
         jPanel1.paint(jPanel1.getGraphics());
     }
     public void dibujarNodos(){
-        ArrayList<Node> listaNodo = grafo.getNodeList();
+        ArrayList<Node> listaNodo = grafo.getListaNodos();
         for(Node nodo:listaNodo){            
-            nodo.getCirculo().dibujarCirculo(jPanel1.getGraphics());
+            nodo.getCircle().dibujarCirculo(jPanel1.getGraphics());
         }
     }
     public void dibujarArista(){
-        ArrayList<Node> listaNodo = grafo.getNodeList();
+        ArrayList<Node> listaNodo = grafo.getListaNodos();
         for(Node nodo:listaNodo){            
             ArrayList<Link> listaEnlace = nodo.getListaNodoAdyacente();
             if(listaEnlace != null){
