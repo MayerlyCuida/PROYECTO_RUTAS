@@ -10,6 +10,9 @@ public class Node {
 	 private boolean visited = false;  
 	 private Circle circulo;
 	 private int  left;
+	 private int pathLength; //For use of the Disjktra class
+     private Node nodeAncestorDisjktra; //For use of the Disjktra class
+     private boolean flag;//For use by the Disjktra class
 
 	   public Node() {
 		   this.fact = new Object(); 
@@ -21,7 +24,14 @@ public class Node {
 	        listaNodoAdyacente = new ArrayList<Link>();
 	        circulo = new Circle(coordenada);
 	        circulo.setLeft(left);
+			initializeForDisjktra();
 	    }
+		private void initializeForDisjktra(){
+			pathLength = -1;
+			nodeAncestorDisjktra = null;
+			flag = false;
+			}
+
 	   public void addNodoAdyacente(Link arista){
 	        listaNodoAdyacente.add(arista);
 	    }
@@ -39,9 +49,18 @@ public class Node {
 	        return this.fact;
 	    }
 
-		public ArrayList<Link> getListaNodoAdyacente() {
-			return listaNodoAdyacente;
-		}
+		public ArrayList<Link> getListaNodoAdyacente(){
+        ArrayList<Link> listAristaAux = null;
+        if(!listaNodoAdyacente.isEmpty()){
+            listAristaAux = new ArrayList<Link>();
+            for(Link enlace:listaNodoAdyacente){
+                if(enlace.getEdge().isHabilitado)){
+                    listAristaAux.add(enlace);
+                }
+            }
+        }        
+        return listAristaAux;
+    }
 
 		public void setListaNodoAdyacente(ArrayList<Link> listaNodoAdyacente) {
 			this.listaNodoAdyacente = listaNodoAdyacente;
@@ -55,30 +74,47 @@ public class Node {
 			this.fact = fact;
 		}
 
-		public boolean isVisited() {
+		public void addAdjacentNode(Link edge){
+			listaNodoAdyacente.add(edge);
+		}
+		
+		public void addAdjacentNode(Edge via,Node node){
+			this.addNodoAdyacente(new Link(via, node));
+		}
+
+		public void setVisited(boolean visited){
+ 		this.visited = visited;
+	    }
+		
+		public boolean isVisited(){
 			return visited;
 		}
 
-		public void setVisited(boolean visited) {
-			this.visited = visited;
-		}
-
-		public Circle getCirculo() {
+		public Circle getCircle() {
 			return circulo;
 		}
 
-		public void setCirculo(Circle circulo) {
-			this.circulo = circulo;
+		public void setCircle(Circle circle) {
+			this.circulo = circle;
 		}
 
-		public int getLeft() {
-			return left;
+		public int getPathLength() {
+			return pathLength;
+		}
+ 
+		public void setPathLength(int pathLength) {
+			this.pathLength = pathLength;
+		}
+		
+		public Node getDisjktraAncestorNode() {
+			 return nodeAncestorDisjktra;
+			}
+	
+		public void setDisjktraAncestorNode(Node nodoAntecesorDisjktra) {
+		 this.nodeAncestorDisjktra = nodoAntecesorDisjktra;
+		}
 		}
 
-		public void setLeft(int left) {
-			this.left = left;
-		}
-	    
-	    
 
-}
+
+
