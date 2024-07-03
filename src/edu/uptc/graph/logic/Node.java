@@ -54,7 +54,7 @@ public class Node {
         if(!listaNodoAdyacente.isEmpty()){
             listAristaAux = new ArrayList<Link>();
             for(Link enlace:listaNodoAdyacente){
-                if(enlace.getEdge().isHabilitado){
+                if(enlace.getEdge().isHabilitado()){
                     listAristaAux.add(enlace);
                 }
             }

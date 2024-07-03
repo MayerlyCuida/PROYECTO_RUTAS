@@ -159,9 +159,9 @@ public class Graph {
             ArrayList<Link> la = nodo.getListaNodoAdyacente();
                 if(la != null){
                     for(Link enlace:la){
-                        if(enlace.getEdge().isEnabled()){
-                            enlace.getEdge().getBrokenLine().setColor(Color.black);
-                            enlace.getEdge().getBrokenLine().setGrosorLinea(1);
+                        if(enlace.getEdge().isHabilitado()){
+                            enlace.getEdge().getLineaQuebrada().setColor(Color.black);
+                            enlace.getEdge().getLineaQuebrada().setGrosorLinea(1);
                         }
                     }
                 }

@@ -6,6 +6,8 @@ public class Edge {
 	private  int  	idEdge;
 	private  String nameEdge;
 	private int distance;
+	private BrokenLine lineaQuebrada;//Ésta es la via representada graficamente    
+    private boolean habilitado;
 	
 	public Edge() {
 		
@@ -16,6 +18,8 @@ public class Edge {
 		this.idEdge = idEdge;
 		this.nameEdge = nameEdge;
 		this.distance = distance;
+		lineaQuebrada = null;
+        habilitado = true;
 	}
 	public int getIdEdge() {
 		return idEdge;
@@ -35,6 +39,23 @@ public class Edge {
 	public void setDistance(int distance) {
 		this.distance = distance;
 	}
+	public void setLineaQuebrada(BrokenLine lineaQuebrada){
+        this.lineaQuebrada = lineaQuebrada;
+        if(lineaQuebrada != null){
+            this.lineaQuebrada.setLongitud(distance);
+        }
+    }
+    public BrokenLine getLineaQuebrada(){
+        return lineaQuebrada;
+    }
+
+    public boolean isHabilitado() {
+        return habilitado;
+    }
+
+    public void setHabilitado(boolean habilitado) {
+        this.habilitado = habilitado;
+    }
 	
 
 
